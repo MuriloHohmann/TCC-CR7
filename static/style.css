@@ -8,21 +8,15 @@
 
 #boludos{
     position: absolute;
-    height: 953px;
-    right: 744px;
+    height: 911px;
+    right: 790px;
     top: 0%;
     
 }
 
-body {
+#Login1 {
     background-color:#005ea7;
     color: white
-}
-
-button {
-    position: absolute;
-    top: 380px;
-    left: 1160px;
 }
 
 .login-box {
@@ -49,4 +43,29 @@ button {
     color: white;
     right: 200px;
     top: 800px;
+}
+
+#botao {
+    background-color: #ff9500;
+    position: relative;
+    left: 1080px;
+    top: 380px;
+    border: none; /* <-- Remove a borda padrão */
+    color: white;
+}
+
+#Login {
+    background-color: #192a6b;
+    position: relative;
+    left: 1100px;
+    top: 380px;
+    border: none; /* <-- Remove a borda verde/padrão */
+    color: white;
+}
+
+#navbar {
+    background-color: #192a6b !important;
+} 
+#home1 {
+    background-color: rgb(255, 255, 255);
 }
