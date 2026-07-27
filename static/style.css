@@ -8,7 +8,7 @@
 
 #boludos{
     position: absolute;
-    height: 911px;
+    height: 953px;
     right: 790px;
     top: 0%;
     
@@ -94,8 +94,8 @@
 
 .carousel-item img {
   width: 100%;
-  height: 380px !important;
-  object-fit: cover;
+  height: 500px !important;
+  object-fit: contain !important;
   border-radius: 12px;
 }
 
@@ -108,93 +108,26 @@
   min-height: 100vh;
 }
 
-/* --- FUNDO DAS PÁGINAS NOVAS --- */
-.fundo-paginas-novas {
-    background-image: url('/static/industria.png') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-    min-height: 100vh;
+#navbarcadastro {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
 }
 
-/* --- FUNDO DAS PÁGINAS NOVAS --- */
-.fundo-paginas-novas {
-    background-image: url('/static/industria.png') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-    min-height: 100vh;
+#brandao085 {
+    position: absolute;
+    width: 430px;
+    left: 39%;
+    top: 480px;
 }
 
-/* --- FUNDO DAS PÁGINAS NOVAS --- */
-.fundo-paginas-novas {
-    background-image: url('/static/industria.png') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-    min-height: 100vh;
-}
-
-/* --- ESTILOS DO ALMOXARIFADO --- */
-.caixa-almoxarifado {
-    background-color: #ffffff !important;
-    color: #1a3875;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Centralização do Cabeçalho */
-.header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.logo-senai {
-    max-width: 150px;
-    height: auto;
-}
-
-.titulo-almoxarifado {
-    color: #1a3875;
-    font-weight: 800;
-    font-size: 2.4rem;
-    letter-spacing: 2px;
-}
-
-/* --- TABELA CLEAN --- */
-.tabela-simples {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.tabela-simples th {
-    background-color: #1a3875 !important;
-    color: #ffffff !important;
-    text-align: center;
-    vertical-align: middle;
-    padding: 12px;
-    font-size: 15px;
-    border: none;
-}
-
-.tabela-simples td {
-    background-color: #ffffff !important;
-    color: #333333 !important;
-    border-bottom: 1px solid #e9ecef !important;
-    text-align: center;
-    vertical-align: middle;
-    padding: 12px;
-    font-size: 15px;
-}
-
-.tabela-simples tr:hover td {
-    background-color: #f8f9fa !important;
+#equipesenai {
+    position: absolute;
+    color: white;
+    left: 670px;
+    top: 260px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
 }
