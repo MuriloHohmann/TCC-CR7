@@ -50,7 +50,7 @@
     position: relative;
     left: 1080px;
     top: 380px;
-    border: none; /* <-- Remove a borda padrão */
+    border: none; 
     color: white;
 }
 
@@ -59,50 +59,142 @@
     position: relative;
     left: 1100px;
     top: 380px;
-    border: none; /* <-- Remove a borda verde/padrão */
+    border: none; 
     color: white;
 }
 
 #navbar {
     background-color: #192a6b !important;
 } 
+/* --- FUNDO DA PÁGINA (FÁBRICA) --- */
 #home1 {
-    background-color: rgb(255, 255, 255);
+    background-image: url('industria.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    min-height: 100vh;
 }
 
-/* --- ESTILOS DO BANNER DE FUNDO + LOGO --- */
-.header-container {
-  position: relative;
-  width: 100%;
-  max-height: 400px;
-  overflow: hidden;
-}
 
-#fundohome {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  display: block;
-}
-
+/* --- LOGO DO SENAI --- */
 #logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 300px;
-  height: auto;
+  max-width: 250px !important;
+  height: auto !important;
+  margin-top: 10px !important;    /* Espaço em cima da logo */
+  margin-bottom: 20px !important; /* Espaço entre a logo e o carrossel */
 }
 
-/* --- ESTILOS DO CARROSSEL --- */
+/* --- CARROSSEL --- */
 #carouselExampleAutoplayin {
-  width: 90%;
-  max-width: 700px;
-  margin: 40px auto; /* Centraliza na tela */
+  width: 85% !important;
+  max-width: 1000px !important;
+  margin: 0 auto 30px auto !important; /* MANTENHA 0 AQUI (o espaço de cima é dado pelo margin-bottom da logo!) */
 }
 
 .carousel-item img {
-  height: 400px;
+  width: 100%;
+  height: 380px !important;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
+}
+
+.fundo-paginas-novas {
+  background-image: url('/static/industria.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  min-height: 100vh;
+}
+
+/* --- FUNDO DAS PÁGINAS NOVAS --- */
+.fundo-paginas-novas {
+    background-image: url('/static/industria.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    min-height: 100vh;
+}
+
+/* --- FUNDO DAS PÁGINAS NOVAS --- */
+.fundo-paginas-novas {
+    background-image: url('/static/industria.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    min-height: 100vh;
+}
+
+/* --- FUNDO DAS PÁGINAS NOVAS --- */
+.fundo-paginas-novas {
+    background-image: url('/static/industria.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    min-height: 100vh;
+}
+
+/* --- ESTILOS DO ALMOXARIFADO --- */
+.caixa-almoxarifado {
+    background-color: #ffffff !important;
+    color: #1a3875;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Centralização do Cabeçalho */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo-senai {
+    max-width: 150px;
+    height: auto;
+}
+
+.titulo-almoxarifado {
+    color: #1a3875;
+    font-weight: 800;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+}
+
+/* --- TABELA CLEAN --- */
+.tabela-simples {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.tabela-simples th {
+    background-color: #1a3875 !important;
+    color: #ffffff !important;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+}
+
+.tabela-simples td {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+    border-bottom: 1px solid #e9ecef !important;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.tabela-simples tr:hover td {
+    background-color: #f8f9fa !important;
 }

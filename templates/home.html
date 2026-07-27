@@ -18,43 +18,41 @@
 
     <nav id="navbar" class="navbar navbar-expand-lg" style="background-color: #192a6b;" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{ url_for('login') }}">Anterior</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Históricos de Movimentacão</a>
+          <a class="nav-link" href="{{ url_for('movimentacoes') }}">Históricos de Movimentação</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Estoque</a>
+          <a class="nav-link" href="{{ url_for('estoque') }}">Estoque</a>
         </li>
     </ul>
     </div>
   </div>
 </nav>
 
-<!-- Seção do Banner / Fundo -->
-    <div class="header-container">
-      <img id="fundohome" src="{{ url_for('static', filename='industria.png') }}" alt="fundohome">
-      <img id="logo" src="{{ url_for('static', filename='fundosenai.png.png') }}" alt="logo">
-    </div>
+<div class="text-center">
+  <img id="logo" src="{{ url_for('static', filename='fundosenai.png.png') }}" alt="logo" style="max-width: 300px; height: auto;">
+</div>
 
     <!-- Seção do Carrossel -->
     <div id="carouselExampleAutoplayin" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{ url_for('static', filename='macaco.png') }}" class="d-block w-100" alt="macaco">
+          <img src="{{ url_for('static', filename='liberta2019.png') }}" class="d-block w-100" alt="liberta2019">
         </div>
         <div class="carousel-item">
-          <img src="{{ url_for('static', filename='macaco2.png') }}" class="d-block w-100" alt="macaco2">
+          <img src="{{ url_for('static', filename='muriloheat.png') }}" class="d-block w-100" alt="muriloheat">
         </div>
         <div class="carousel-item">
-          <img src="{{ url_for('static', filename='macaco3.png') }}" class="d-block w-100" alt="macaco3">
+          <img src="{{ url_for('static', filename='oscaba.png') }}" class="d-block w-100" alt="oscaba">
         </div>
       </div>
 

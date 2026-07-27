@@ -17,5 +17,15 @@ def home():
 def cadastro():
     return render_template("cadastro.html") # Lembre-se de criar esse HTML em templates/
 
+# Rota para Histórico de Movimentações
+@app.route("/movimentacoes")
+def movimentacoes():
+    return render_template("Movimentacoes.html")
+
+# Rota para a Tela de Estoque
+@app.route("/estoque")
+def estoque():
+    return render_template("Estoque.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
