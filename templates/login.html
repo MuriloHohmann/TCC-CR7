@@ -29,22 +29,19 @@
     </button>
 </a>
 
-<a href="{{ url_for('home') }}">
-    <button id="Login" type="button" class="btn btn-primary">
+<form method="POST" class="login-box">
+    <!-- Os inputs precisam do 'name' para o Flask conseguir ler no backend -->
+    <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
+    <input type="password" name="senha" class="form-control mb-3" placeholder="Senha" required>
+    
+    <!-- Seu botão com formaction -->
+    <button id="Login" 
+            formaction="/login" 
+            type="submit" 
+            class="btn btn-primary">
         Login
     </button>
-</a>
-
-
-
-<div class="login-box">
-    
-    <input type="email" class="form-control mb-3" placeholder="Email address">
-    
-    <input type="password" class="form-control mb-3" placeholder="Password">
-    
-
-</div>
+</form>
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

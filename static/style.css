@@ -57,8 +57,9 @@
 #Login {
     background-color: #192a6b;
     position: relative;
-    left: 1100px;
-    top: 380px;
+    height: 37px;
+    left: 220px;
+    top: 25px;
     border: none; 
     color: white;
 }
@@ -66,7 +67,6 @@
 #navbar {
     background-color: #192a6b !important;
 } 
-/* --- FUNDO DA PÁGINA (FÁBRICA) --- */
 #home1 {
     background-image: url('industria.png') !important;
     background-size: cover !important;
@@ -77,19 +77,19 @@
 }
 
 
-/* --- LOGO DO SENAI --- */
+
 #logo {
   max-width: 250px !important;
   height: auto !important;
-  margin-top: 10px !important;    /* Espaço em cima da logo */
-  margin-bottom: 20px !important; /* Espaço entre a logo e o carrossel */
+  margin-top: 10px !important;    
+  margin-bottom: 20px !important; 
 }
 
-/* --- CARROSSEL --- */
+
 #carouselExampleAutoplayin {
   width: 85% !important;
   max-width: 1000px !important;
-  margin: 0 auto 30px auto !important; /* MANTENHA 0 AQUI (o espaço de cima é dado pelo margin-bottom da logo!) */
+  margin: 0 auto 30px auto !important; 
 }
 
 .carousel-item img {
@@ -120,7 +120,7 @@ z-index: 1000;
     position: absolute;
     width: 430px;
     left: 39%;
-    top: 480px;
+    top: 410px;
 }
 
 #equipesenai {
@@ -130,4 +130,12 @@ z-index: 1000;
     top: 260px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
+}
+
+#fonteestoque {
+    position: relative;
+    color: white;
+     -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+
 }
