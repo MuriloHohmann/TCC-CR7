@@ -8,7 +8,7 @@ app.secret_key = "senaimeupinto"
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="1234",
+    password="",
     database="CR7GOAT"
 )
 
@@ -88,7 +88,11 @@ def cadastra():
 
 @app.route("/movimentacoes")
 def movimentacoes():
-    return render_template("Movimentacoes.html")
+    cursor = conexao.cursor()
+    cursor.execute("SELECT id, usuario, acao, produto, quantidade, data_hora FROM historico ORDER BY id DESC")
+    historico = cursor.fetchall()
+    cursor.close()
+    return render_template("Movimentacoes.html", historico=historico)
 
 
 
@@ -122,7 +126,78 @@ def cadastroadm_page():
 
 @app.route("/estoqueadm")
 def estoqueadm():
-    return render_template("estoqueadm.html")
+    cursor = conexao.cursor()
+    cursor.execute("SELECT id, produto, categoria, quantidade FROM estoque")
+    movimentacoes = cursor.fetchall()
+    cursor.close()
+    return render_template("estoqueadm.html", movimentacoes=movimentacoes)
+
+
+@app.route('/deletar_item/<int:id>', methods=['POST'])
+def deletar(id):
+    usuario = session.get('email', 'Desconhecido')
+
+    cursor = conexao.cursor()
+    cursor.execute("SELECT produto, quantidade FROM estoque WHERE id = %s", (id,))
+    item = cursor.fetchone()
+
+    if item:
+        cursor.execute("DELETE FROM estoque WHERE id = %s", (id,))
+        cursor.execute("""
+            INSERT INTO historico (usuario, acao, produto, quantidade) 
+            VALUES (%s, %s, %s, %s)
+        """, (usuario, "Retirou", item[0], item[1]))
+        conexao.commit()
+
+    cursor.close()
+    return redirect('/estoqueadm')
+
+@app.route('/editar_item/<int:id>', methods=['POST'])
+def editar_item(id):
+    produto = request.form['produto']
+    categoria = request.form['categoria']
+    quantidade = request.form['quantidade']
+    usuario = session.get('email', 'Desconhecido')
+
+    cursor = conexao.cursor()
+    cursor.execute("""
+        UPDATE estoque 
+        SET produto = %s, categoria = %s, quantidade = %s 
+        WHERE id = %s
+    """, (produto, categoria, quantidade, id))
+
+    cursor.execute("""
+        INSERT INTO historico (usuario, acao, produto, quantidade) 
+        VALUES (%s, %s, %s, %s)
+    """, (usuario, "Editou", produto, quantidade))
+
+    conexao.commit()
+    cursor.close()
+    return redirect('/estoqueadm')
+
+
+@app.route('/adicionar_item', methods=['POST'])
+def adicionar_item():
+    produto = request.form['produto']
+    categoria = request.form['categoria']
+    quantidade = request.form['quantidade']
+    usuario = session.get('email', 'Desconhecido')
+
+    cursor = conexao.cursor()
+    cursor.execute("""
+        INSERT INTO estoque (produto, categoria, quantidade) 
+        VALUES (%s, %s, %s)
+    """, (produto, categoria, quantidade))
+    
+    cursor.execute("""
+        INSERT INTO historico (usuario, acao, produto, quantidade) 
+        VALUES (%s, %s, %s, %s)
+    """, (usuario, "Adicionou", produto, quantidade))
+
+    conexao.commit()
+    cursor.close()
+    return redirect('/estoqueadm')
+    
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ CREATE TABLE usuario (
     tipo VARCHAR(20) NOT NULL
 );
 
-SELECT * FROM usuario
+SELECT * FROM estoque
 ;
 
 INSERT INTO usuario (email, senha, tipo)
@@ -31,3 +31,15 @@ INSERT INTO estoque (produto, categoria, quantidade) VALUES
 ('Luva de Proteção', 'EPI', 15),
 ('Chave de Fenda', 'Ferramentas', 8),
 ('Capacete Industrial', 'EPI', 5);
+
+
+USE CR7GOAT;
+
+CREATE TABLE IF NOT EXISTS historico (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(100) NOT NULL,
+    acao VARCHAR(50) NOT NULL,
+    produto VARCHAR(100) NOT NULL,
+    quantidade INT NOT NULL,
+    data_hora DATETIME DEFAULT CURRENT_TIMESTAMP
+);

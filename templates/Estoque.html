@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('home') }}">Página inicial</a>
+                        <a class="nav-link" href="{{ url_for('login') }}">Página inicial</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ url_for('estoque') }}">Estoque</a>
@@ -48,10 +48,10 @@
             <tbody>
                 {% for mov in movimentacoes %}
                 <tr>
-                    <td>{{ mov[0] }}</td> <!-- ID -->
-                    <td>{{ mov[1] }}</td> <!-- Produto -->
-                    <td>{{ mov[2] }}</td> <!-- Categoria -->
-                    <td>{{ mov[3] }}</td> <!-- Quantidade -->
+                    <td>{{ mov[0] }}</td> 
+                    <td>{{ mov[1] }}</td> 
+                    <td>{{ mov[2] }}</td> 
+                    <td>{{ mov[3] }}</td> 
                     <td>
                         
                         <form action="{{ url_for('deletar_item', id=mov[0]) }}" method="POST" style="display:inline;">
