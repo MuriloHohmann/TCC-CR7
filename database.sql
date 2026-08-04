@@ -8,7 +8,7 @@ CREATE TABLE usuario (
     tipo VARCHAR(20) NOT NULL
 );
 
-SELECT * FROM estoque
+SELECT * FROM usuario
 ;
 
 INSERT INTO usuario (email, senha, tipo)
@@ -43,3 +43,4 @@ CREATE TABLE IF NOT EXISTS historico (
     quantidade INT NOT NULL,
     data_hora DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+DELETE FROM historico WHERE id IN (1, 2, 3, 4);
