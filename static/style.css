@@ -35,13 +35,13 @@
 #boas-vindas {
     position: absolute;
     color: white;
-    right: 200px;
+    right: 258px;
     top: 30px;
 }
 #login-fudido{
     position: absolute;
     color: white;
-    right: 200px;
+    right: 195px;
     top: 800px;
 }
 
@@ -138,4 +138,11 @@ z-index: 1000;
      -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
 
+}
+
+#aleezin {
+    position: absolute;
+    width: 430px;
+    left: 39%;
+    top: 440px;
 }

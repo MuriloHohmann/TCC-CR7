@@ -106,16 +106,6 @@ def estoque():
     return render_template("Estoque.html", movimentacoes=movimentacoes)
 
 
-@app.route('/deletar_item/<int:id>', methods=['POST'])
-def deletar_item(id):
-    cursor = conexao.cursor()
-    cursor.execute("DELETE FROM estoque WHERE id = %s", (id,))
-    conexao.commit()
-    cursor.close()
-    return redirect('/estoque')
-
-
-
 @app.route("/adm")
 def adm():
     return render_template("adm.html")
@@ -134,23 +124,29 @@ def estoqueadm():
 
 
 @app.route('/deletar_item/<int:id>', methods=['POST'])
-def deletar(id):
+def deletar_item(id):
     usuario = session.get('email', 'Desconhecido')
 
     cursor = conexao.cursor()
+    
     cursor.execute("SELECT produto, quantidade FROM estoque WHERE id = %s", (id,))
     item = cursor.fetchone()
 
     if item:
         cursor.execute("DELETE FROM estoque WHERE id = %s", (id,))
+        
         cursor.execute("""
             INSERT INTO historico (usuario, acao, produto, quantidade) 
             VALUES (%s, %s, %s, %s)
         """, (usuario, "Retirou", item[0], item[1]))
+        
         conexao.commit()
 
     cursor.close()
-    return redirect('/estoqueadm')
+    if session.get('tipo') == 'admin':
+        return redirect('/estoqueadm')
+    
+    return redirect('/estoque')
 
 @app.route('/editar_item/<int:id>', methods=['POST'])
 def editar_item(id):
